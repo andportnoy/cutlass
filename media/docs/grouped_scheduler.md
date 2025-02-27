@@ -70,7 +70,7 @@ is shown below:
 Each threadblock in the grouped GEMM computes its own schedule by calling
 the `next_tile()` method described above.
 
-To do this, the threadblock's `ProblemVisitor` maintains a `thread_idx`
+To do this, the threadblock's `ProblemVisitor` maintains a `tile_idx`
 member that is initialized to `blockIdx.x` and is incremented by
 `gridDim.x` between each tile computed (only the x dimension is used)
 in the launch configuration for grouped kernels). The scheduler must
